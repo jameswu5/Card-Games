@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Blackjack {
     public struct Card {
-        public int id;
+        private int id;
 
         public Card(int id) {
             this.id = id;
@@ -39,7 +39,7 @@ namespace Blackjack {
             Dictionary<int, string> map = new() {
                 {0b10000000, "♠"},
                 {0b01000000, "♥"},
-                {0b00100000, "♥"},
+                {0b00100000, "♣"},
                 {0b00010000, "♦"},
             };
 
