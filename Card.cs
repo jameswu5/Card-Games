@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace Blackjack {
-    public struct Card {
+    public class Card {
         private int id;
 
         public Card(int id) {
@@ -13,7 +13,7 @@ namespace Blackjack {
         public int GetValueBlackJack() {
             string rank = GetRank();
             return rank switch {
-                "A" => 1,
+                "A" => 11,
                 "T" => 10,
                 "J" => 10,
                 "Q" => 10,

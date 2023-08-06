@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 
 namespace Blackjack {
-    public struct CardCollection {
-        private List<Card> cards;
+    public class CardCollection {
+        public List<Card> cards;
 
         public CardCollection(bool standardDeck = false) {
             cards = new List<Card>();
@@ -27,7 +27,12 @@ namespace Blackjack {
             return topCard;
         }
 
+        public void Clear() {
+            cards.Clear();
+        }
+
         public void GenerateStandardDeck() {
+            Clear();
             int suit = 0b10000000;
             for (int i = 0; i < 4; i++) {
                 for (int rank = 1; rank <= 13; rank++) {
