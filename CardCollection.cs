@@ -27,6 +27,14 @@ namespace Blackjack {
             return topCard;
         }
 
+        public Card GetTopCard() {
+            if (cards.Count == 0) {
+                throw new Exception("The deck is empty");
+            }
+            Card topCard = cards[^1];
+            return topCard;
+        }
+
         public void Clear() {
             cards.Clear();
         }

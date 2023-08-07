@@ -41,8 +41,12 @@ namespace Blackjack {
 
 
         public void ShowHand() {
-            Console.WriteLine($"Score: {score} | {hand}");
+            Console.WriteLine($"[{score}] | {hand}");
         }
 
+        public void ShowHiddenHand() {
+            Card topCard = hand.GetTopCard();
+            Console.WriteLine($"__ {topCard}");
+        }
     }
 }
