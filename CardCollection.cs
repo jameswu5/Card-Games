@@ -19,7 +19,7 @@ namespace CardGames {
         }
 
         public Card DealCard() {
-            if (cards.Count == 0) {
+            if (IsEmpty()) {
                 throw new Exception("The deck is empty");
             }
             Card topCard = cards[^1];
@@ -27,8 +27,14 @@ namespace CardGames {
             return topCard;
         }
 
+        public Card MoveCard(CardCollection destination) {
+            Card movedCard = DealCard();
+            destination.AddCard(movedCard);
+            return movedCard;
+        } 
+
         public Card GetTopCard() {
-            if (cards.Count == 0) {
+            if (IsEmpty()) {
                 throw new Exception("The deck is empty");
             }
             Card topCard = cards[^1];
@@ -50,6 +56,10 @@ namespace CardGames {
             }
         }
 
+        public bool IsEmpty() {
+            return cards.Count == 0;
+        }
+
         // Fisher-Yates shuffle
         public void Shuffle() {
             Random rng = new();
@@ -69,7 +79,5 @@ namespace CardGames {
             }
             return sb.ToString();
         }
-
-
     }
 }

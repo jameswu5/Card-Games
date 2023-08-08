@@ -10,6 +10,12 @@ namespace CardGames {
             this.id = id;
         }
 
+        // returns a value from 1 to 13 (ace low)
+        public int GetValue() {
+            int mask = 0b00001111;
+            return id & mask;
+        }
+
         public int GetValueBlackJack() {
             string rank = GetRank();
             return rank switch {

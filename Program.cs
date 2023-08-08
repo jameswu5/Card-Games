@@ -5,8 +5,10 @@ using System.Linq;
 namespace CardGames {
     public class Program {
         public static void Main() {
-            Blackjack.Game game = new();
-            game.PlayInteractiveGame();
+            Patience.Game game = new();
+            game.Simulate(true);
+            // Blackjack.Game game = new();
+            // game.PlayInteractiveGame();
         }
     }
 }

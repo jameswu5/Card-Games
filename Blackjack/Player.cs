@@ -19,8 +19,7 @@ namespace CardGames.Blackjack {
         }
 
         public void Hit(CardCollection sourceDeck) {
-            Card card = sourceDeck.DealCard();
-            hand.AddCard(card);
+            Card card = sourceDeck.MoveCard(hand);
             score += card.GetValueBlackJack();
 
             if (card.GetRank() == "A") {
