@@ -10,6 +10,10 @@ namespace CardGames {
             this.id = id;
         }
 
+        public int GetId() {
+            return id;
+        }
+
         // returns a value from 1 to 13 (ace low)
         public int GetValue() {
             int mask = 0b00001111;

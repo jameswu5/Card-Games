@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CardGames {
     public class CardCollection {
-        public List<Card> cards;
+        private List<Card> cards;
 
         public CardCollection(bool standardDeck = false) {
             cards = new List<Card>();
@@ -58,6 +58,10 @@ namespace CardGames {
 
         public bool IsEmpty() {
             return cards.Count == 0;
+        }
+
+        public int GetCount() {
+            return cards.Count;
         }
 
         // Fisher-Yates shuffle
