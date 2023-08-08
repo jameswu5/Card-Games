@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Blackjack {
+namespace CardGames.Blackjack {
     public class Player {
         private CardCollection hand;
         public int score;

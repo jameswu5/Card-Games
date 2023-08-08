@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Blackjack {
+namespace CardGames {
     public class Card {
         private int id;
 

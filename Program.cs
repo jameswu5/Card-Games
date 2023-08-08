@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Blackjack {
+namespace CardGames {
     public class Program {
         public static void Main() {
-            Game game = new Game();
+            Blackjack.Game game = new();
             game.PlayInteractiveGame();
         }
     }
