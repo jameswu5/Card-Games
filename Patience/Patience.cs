@@ -67,18 +67,19 @@ namespace CardGames.Patience {
             Console.WriteLine();
             List<CardCollection> piles = Simulate();
 
+            PriorityQueue<int, int> contenders = new();
+            for (int i = 0; i < piles.Count; i++) {
+                contenders.Enqueue(i, piles[i].GetTopCard().GetValue());
+            }
+            
             CardCollection sortedDeck = new();
 
-            while (sortedDeck.GetCount() < 52) {
-                int minValue = 14;
-                CardCollection pile = null!;
-                for (int i = 0; i < piles.Count; i++) {
-                    if (!piles[i].IsEmpty() && piles[i].GetTopCard().GetValue() < minValue) {
-                        minValue = piles[i].GetTopCard().GetValue();
-                        pile = piles[i];
-                    }
+            while (contenders.Count > 0) {
+                int index = contenders.Dequeue();
+                piles[index].MoveCard(sortedDeck);
+                if (!piles[index].IsEmpty()) {
+                    contenders.Enqueue(index, piles[index].GetTopCard().GetValue());
                 }
-                pile.MoveCard(sortedDeck);
             }
 
             Console.WriteLine($"Sorted deck");
